@@ -1,0 +1,120 @@
+13:594  8:731  Found UEFI Acpi 2.0 RSDP at 9BB4E014
+13:594  0:000  Saving ACPI tables from RSDP 9BB4E014 to EFI\CLOVER\ACPI\origin ...
+13:594  0:000   9BB4E014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+13:599  0:004    (Xsdt: 9BB2B188, Rsdt: 9BB2B0C4)
+13:599  0:000    9BB2B188: 'XSDT', 'SLIC-MPC', Rev: 1, Len: 268 -> XSDT.aml
+13:602  0:003    9BB2B0C4: 'RSDT', 'SLIC-MPC', Rev: 1, Len: 152 -> RSDT.aml
+13:605  0:003    Tables in Xsdt: 29
+13:605  0:000    0. 9BB30000: 'FACP', 'SLIC-MPC', Rev: 5, Len: 268 -> FACP.aml
+13:608  0:003        (Dsdt: 9BAE4000, Facs: 9BA1E000, XDsdt: 9BAE4000, XFacs: 0)
+13:608  0:000        9BAE4000: 'DSDT', 'SLIC-MPC', Rev: 2, Len: 287901 -> DSDT.aml
+13:615  0:006        9BA1E000: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+13:618  0:003    1. 9BA7D000: 'UEFI', '866E', Rev: 1, Len: 566 -> UEFI.aml
+13:621  0:003    2. 9BB49000: 'SSDT', '866E', Rev: 2, Len: 16668 -> SSDT-0-866E.aml
+13:625  0:003    3. 9BB47000: 'SSDT', '866E', Rev: 2, Len: 6986 -> SSDT-1-866E.aml (Found hidden SSDT 9 pcs)
+13:628  0:003        * 9AB35018: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1376  53 53 44 54 60 05 00 00 02 4D 50 6D 52 65 66 00 Internal length = 1376 -> SSDT-x1_0-Cpu0Ist.aml
+13:632  0:003        * 9AB33018: 'SSDT', 'ApIst', Rev: 2, Len: 1912  53 53 44 54 78 07 00 00 02 70 50 6D 52 65 66 00 Internal length = 1912 -> SSDT-x1_1-ApIst.aml
+13:635  0:003        * 9AB35698: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 1024  53 53 44 54 00 04 00 00 02 DF 50 6D 52 65 66 00 Internal length = 1024 -> SSDT-x1_2-Cpu0Cst.aml
+13:638  0:002        * 9AB33A98: 'SSDT', 'ApCst', Rev: 2, Len: 970  53 53 44 54 CA 03 00 00 02 AC 50 6D 52 65 66 00 Internal length = 970 -> SSDT-x1_3-ApCst.aml
+13:641  0:002        * 9AC1E798: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 283  53 53 44 54 1B 01 00 00 02 67 50 6D 52 65 66 00 Internal length = 283 -> SSDT-x1_4-Cpu0Hwp.aml
+13:644  0:002        * 9AB31018: 'SSDT', 'ApHwp', Rev: 2, Len: 983  53 53 44 54 D7 03 00 00 02 2E 50 6D 52 65 66 00 Internal length = 983 -> SSDT-x1_5-ApHwp.aml
+13:647  0:003        * 9AB34018: 'SSDT', 'HwpLvt', Rev: 2, Len: 3042  53 53 44 54 E2 0B 00 00 02 B6 50 6D 52 65 66 00 Internal length = 3042 -> SSDT-x1_6-HwpLvt.aml
+13:650  0:002        * 9AB35D18: 'SSDT', 'Cpu0Psd', Rev: 2, Len: 244  53 53 44 54 F4 00 00 00 02 3D 50 6D 52 65 66 00 Internal length = 244 -> SSDT-x1_7-Cpu0Psd.aml
+13:653  0:002        * 9AB32018: 'SSDT', 'ApPsd', Rev: 2, Len: 3444  53 53 44 54 74 0D 00 00 02 4B 50 6D 52 65 66 00 Internal length = 3444 -> SSDT-x1_8-ApPsd.aml
+13:656  0:003  
+13:656  0:000    4. 9BB43000: 'SSDT', '866E', Rev: 2, Len: 12374 -> SSDT-2-866E.aml
+13:660  0:003    5. 9BB42000: 'SSDT', '866E', Rev: 1, Len: 361 -> SSDT-3-866E.aml
+13:663  0:002    6. 9BB3D000: 'SSDT', '866E', Rev: 1, Len: 18686 -> SSDT-4-866E.aml
+13:666  0:003    7. 9BB3C000: 'MSDM', 'SLIC-MPC', Rev: 3, Len: 85 -> MSDM.aml
+13:669  0:003    8. 9BB3B000: 'LPIT', '866E', Rev: 1, Len: 148 -> LPIT.aml
+13:672  0:003    9. 9BB3A000: 'WSMT', '866E', Rev: 1, Len: 40 -> WSMT.aml
+13:675  0:003    10. 9BB39000: 'SSDT', '866E', Rev: 2, Len: 2928 -> SSDT-5-866E.aml
+13:678  0:003    11. 9BB37000: 'SSDT', '866E', Rev: 2, Len: 5279 -> SSDT-6-866E.aml
+13:682  0:003    12. 9BB36000: 'DBGP', 'SLIC-MPC', Rev: 1, Len: 52 -> DBGP.aml
+13:686  0:003    13. 9BB35000: 'DBG2', '866E', Rev: 0, Len: 84 -> DBG2.aml
+13:689  0:003    14. 9BB34000: 'SSDT', '866E', Rev: 2, Len: 2975 -> SSDT-7-866E.aml
+13:693  0:003    15. 9BB32000: 'SSDT', '866E', Rev: 2, Len: 6513 -> SSDT-8-866E.aml
+13:696  0:003    16. 9BB31000: 'NHLT', '866E', Rev: 0, Len: 45 -> NHLT.aml
+13:699  0:002    17. 9BB2F000: 'HPET', '866E', Rev: 1, Len: 56 -> HPET.aml
+13:702  0:003    18. 9BB2E000: 'APIC', 'SLIC-MPC', Rev: 3, Len: 356 -> APIC.aml
+13:705  0:002    19. 9BB2D000: 'MCFG', '866E', Rev: 1, Len: 60 -> MCFG.aml
+13:708  0:002    20. 9BB2C000: 'SSDT', '866E', Rev: 1, Len: 245 -> SSDT-9-866E.aml
+13:711  0:003    21. 9BAE3000: 'DMAR', '866E', Rev: 1, Len: 168 -> DMAR.aml
+13:714  0:003    22. 9BAE2000: 'SSDT', '866E', Rev: 2, Len: 3468 -> SSDT-10-866E.aml
+13:717  0:002    23. 9BAE1000: 'SSDT', '866E', Rev: 1, Len: 356 -> SSDT-11-866E.aml
+13:720  0:003    24. 9BAE0000: 'SSDT', '866E', Rev: 2, Len: 92 -> SSDT-12-866E.aml
+13:724  0:003    25. 9B21C000: 'UEFI', '866E', Rev: 1, Len: 1594 -> UEFI.aml
+13:728  0:004    26. 9B21B000: 'UEFI', '866E', Rev: 1, Len: 92 -> UEFI.aml
+13:733  0:004    27. 9BADF000: 'FPDT', 'SLIC-MPC', Rev: 1, Len: 68 -> FPDT.aml
+13:736  0:003    28. 9BADE000: 'BGRT', '866E', Rev: 1, Len: 56 -> BGRT.aml
+13:739  0:002    Tables in Rsdt: 29
+13:739  0:000    0. 9BB30000: 'FACP', 'SLIC-MPC', Rev: 5, Len: 268
+13:739  0:000        (Dsdt: 9BAE4000, Facs: 9BA1E000, XDsdt: 9BAE4000, XFacs: 0)
+13:739  0:000        9BAE4000: 'DSDT', 'SLIC-MPC', Rev: 2, Len: 287901
+13:742  0:002        9BA1E000: 'FACS', Ver: 2, Len: 64
+13:742  0:000    1. 9BA7D000: 'UEFI', '866E', Rev: 1, Len: 566
+13:742  0:000    2. 9BB49000: 'SSDT', '866E', Rev: 2, Len: 16668
+13:742  0:000    3. 9BB47000: 'SSDT', '866E', Rev: 2, Len: 6986
+13:742  0:000    4. 9BB43000: 'SSDT', '866E', Rev: 2, Len: 12374
+13:742  0:000    5. 9BB42000: 'SSDT', '866E', Rev: 1, Len: 361
+13:742  0:000    6. 9BB3D000: 'SSDT', '866E', Rev: 1, Len: 18686
+13:742  0:000    7. 9BB3C000: 'MSDM', 'SLIC-MPC', Rev: 3, Len: 85
+13:742  0:000    8. 9BB3B000: 'LPIT', '866E', Rev: 1, Len: 148
+13:742  0:000    9. 9BB3A000: 'WSMT', '866E', Rev: 1, Len: 40
+13:742  0:000    10. 9BB39000: 'SSDT', '866E', Rev: 2, Len: 2928
+13:742  0:000    11. 9BB37000: 'SSDT', '866E', Rev: 2, Len: 5279
+13:742  0:000    12. 9BB36000: 'DBGP', 'SLIC-MPC', Rev: 1, Len: 52
+13:742  0:000    13. 9BB35000: 'DBG2', '866E', Rev: 0, Len: 84
+13:742  0:000    14. 9BB34000: 'SSDT', '866E', Rev: 2, Len: 2975
+13:742  0:000    15. 9BB32000: 'SSDT', '866E', Rev: 2, Len: 6513
+13:742  0:000    16. 9BB31000: 'NHLT', '866E', Rev: 0, Len: 45
+13:742  0:000    17. 9BB2F000: 'HPET', '866E', Rev: 1, Len: 56
+13:742  0:000    18. 9BB2E000: 'APIC', 'SLIC-MPC', Rev: 3, Len: 356
+13:742  0:000    19. 9BB2D000: 'MCFG', '866E', Rev: 1, Len: 60
+13:742  0:000    20. 9BB2C000: 'SSDT', '866E', Rev: 1, Len: 245
+13:742  0:000    21. 9BAE3000: 'DMAR', '866E', Rev: 1, Len: 168
+13:742  0:000    22. 9BAE2000: 'SSDT', '866E', Rev: 2, Len: 3468
+13:742  0:000    23. 9BAE1000: 'SSDT', '866E', Rev: 1, Len: 356
+13:742  0:000    24. 9BAE0000: 'SSDT', '866E', Rev: 2, Len: 92
+13:742  0:000    25. 9B21C000: 'UEFI', '866E', Rev: 1, Len: 1594
+13:742  0:000    26. 9B21B000: 'UEFI', '866E', Rev: 1, Len: 92
+13:742  0:000    27. 9BADF000: 'FPDT', 'SLIC-MPC', Rev: 1, Len: 68
+13:742  0:000    28. 9BADE000: 'BGRT', '866E', Rev: 1, Len: 56
+13:742  0:000  Found UEFI Acpi 1.0 RSDP at 9BB4E000
+13:742  0:000  Printing ACPI tables from RSDP 9BB4E000 ...
+13:742  0:000   9BB4E000: 'RSD PTR ', Rev: 0 (Acpi 1.0), Len: 20
+13:742  0:000    (Rsdt: 9BB2B000)
+13:742  0:000    9BB2B000: 'RSDT', 'SLIC-MPC', Rev: 1, Len: 152
+13:742  0:000    Tables in Rsdt: 29
+13:742  0:000    0. 9BB30000: 'FACP', 'SLIC-MPC', Rev: 5, Len: 268
+13:742  0:000        (Dsdt: 9BAE4000, Facs: 9BA1E000, XDsdt: 9BAE4000, XFacs: 0)
+13:742  0:000        9BAE4000: 'DSDT', 'SLIC-MPC', Rev: 2, Len: 287901
+13:745  0:002        9BA1E000: 'FACS', Ver: 2, Len: 64
+13:745  0:000    1. 9BA7D000: 'UEFI', '866E', Rev: 1, Len: 566
+13:745  0:000    2. 9BB49000: 'SSDT', '866E', Rev: 2, Len: 16668
+13:745  0:000    3. 9BB47000: 'SSDT', '866E', Rev: 2, Len: 6986
+13:745  0:000    4. 9BB43000: 'SSDT', '866E', Rev: 2, Len: 12374
+13:745  0:000    5. 9BB42000: 'SSDT', '866E', Rev: 1, Len: 361
+13:745  0:000    6. 9BB3D000: 'SSDT', '866E', Rev: 1, Len: 18686
+13:745  0:000    7. 9BB3C000: 'MSDM', 'SLIC-MPC', Rev: 3, Len: 85
+13:745  0:000    8. 9BB3B000: 'LPIT', '866E', Rev: 1, Len: 148
+13:745  0:000    9. 9BB3A000: 'WSMT', '866E', Rev: 1, Len: 40
+13:745  0:000    10. 9BB39000: 'SSDT', '866E', Rev: 2, Len: 2928
+13:745  0:000    11. 9BB37000: 'SSDT', '866E', Rev: 2, Len: 5279
+13:745  0:000    12. 9BB36000: 'DBGP', 'SLIC-MPC', Rev: 1, Len: 52
+13:745  0:000    13. 9BB35000: 'DBG2', '866E', Rev: 0, Len: 84
+13:745  0:000    14. 9BB34000: 'SSDT', '866E', Rev: 2, Len: 2975
+13:745  0:000    15. 9BB32000: 'SSDT', '866E', Rev: 2, Len: 6513
+13:745  0:000    16. 9BB31000: 'NHLT', '866E', Rev: 0, Len: 45
+13:745  0:000    17. 9BB2F000: 'HPET', '866E', Rev: 1, Len: 56
+13:745  0:000    18. 9BB2E000: 'APIC', 'SLIC-MPC', Rev: 3, Len: 356
+13:745  0:000    19. 9BB2D000: 'MCFG', '866E', Rev: 1, Len: 60
+13:745  0:000    20. 9BB2C000: 'SSDT', '866E', Rev: 1, Len: 245
+13:745  0:000    21. 9BAE3000: 'DMAR', '866E', Rev: 1, Len: 168
+13:745  0:000    22. 9BAE2000: 'SSDT', '866E', Rev: 2, Len: 3468
+13:745  0:000    23. 9BAE1000: 'SSDT', '866E', Rev: 1, Len: 356
+13:745  0:000    24. 9BAE0000: 'SSDT', '866E', Rev: 2, Len: 92
+13:745  0:000    25. 9B21C000: 'UEFI', '866E', Rev: 1, Len: 1594
+13:745  0:000    26. 9B21B000: 'UEFI', '866E', Rev: 1, Len: 92
+13:745  0:000    27. 9BADF000: 'FPDT', 'SLIC-MPC', Rev: 1, Len: 68
+13:745  0:000    28. 9BADE000: 'BGRT', '866E', Rev: 1, Len: 56
