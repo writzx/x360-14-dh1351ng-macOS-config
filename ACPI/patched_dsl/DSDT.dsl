@@ -62987,17 +62987,17 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
         Field (ECMB, ByteAcc, Lock, Preserve)
         {
             Offset (0xB0), 
-            BSRE,   16, 
-            BSAE,   16, 
-            BSAF,   16, 
-            BSC1,   16, 
-            BSC2,   16, 
-            BSC3,   16, 
-            BSC4,   16, 
+            SRE0,8,SRE1,8, 
+            SAE0,8,SAE1,8, 
+            SAF0,8,SAF1,8, 
+            SC10,8,SC11,8, 
+            SC20,8,SC21,8, 
+            SC30,8,SC31,8, 
+            SC40,8,SC41,8, 
             Offset (0xC0), 
             BSMN,   128, 
             Offset (0x120), 
-            BSCN,   128
+            SCNY,128,//BSCN,128
         }
 
         Field (ECMB, ByteAcc, Lock, Preserve)
@@ -63299,26 +63299,26 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
                         CreateField (DerefOf (Index (Local0, 0x02)), 0xE0, Multiply (SizeOf (SERN), 0x08), 
                             BSNO)
                         Store (SERN, BSNO) /* \GBAT.BSNO */
-                        Store (\_SB.PCI0.LPCB.EC0.BSC1, Index (DerefOf (Index (Local0, 0x02)), 0x14))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSC1, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x15
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SC10,\_SB.PCI0.LPCB.EC0.SC11), Index (DerefOf (Index (Local0, 0x02)), 0x14))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SC10,\_SB.PCI0.LPCB.EC0.SC11), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x15
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSC2, Index (DerefOf (Index (Local0, 0x02)), 0x16))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSC2, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x17
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SC20,\_SB.PCI0.LPCB.EC0.SC21), Index (DerefOf (Index (Local0, 0x02)), 0x16))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SC20,\_SB.PCI0.LPCB.EC0.SC21), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x17
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSC3, Index (DerefOf (Index (Local0, 0x02)), 0x18))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSC3, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x19
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SC30,\_SB.PCI0.LPCB.EC0.SC31), Index (DerefOf (Index (Local0, 0x02)), 0x18))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SC30,\_SB.PCI0.LPCB.EC0.SC31), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x19
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSC4, Index (DerefOf (Index (Local0, 0x02)), 0x1A))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSC4, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x1B
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SC40,\_SB.PCI0.LPCB.EC0.SC41), Index (DerefOf (Index (Local0, 0x02)), 0x1A))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SC40,\_SB.PCI0.LPCB.EC0.SC41), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x1B
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSRE, Index (DerefOf (Index (Local0, 0x02)), 0x64))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSRE, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x65
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SRE0,\_SB.PCI0.LPCB.EC0.SRE1), Index (DerefOf (Index (Local0, 0x02)), 0x64))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SRE0,\_SB.PCI0.LPCB.EC0.SRE1), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x65
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSAF, Index (DerefOf (Index (Local0, 0x02)), 0x66))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSAF, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x67
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SAF0,\_SB.PCI0.LPCB.EC0.SAF1), Index (DerefOf (Index (Local0, 0x02)), 0x66))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SAF0,\_SB.PCI0.LPCB.EC0.SAF1), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x67
                             ))
-                        Store (\_SB.PCI0.LPCB.EC0.BSAE, Index (DerefOf (Index (Local0, 0x02)), 0x68))
-                        Store (ShiftRight (\_SB.PCI0.LPCB.EC0.BSAE, 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x69
+                        Store (B1B2(\_SB.PCI0.LPCB.EC0.SAE0,\_SB.PCI0.LPCB.EC0.SAE1), Index (DerefOf (Index (Local0, 0x02)), 0x68))
+                        Store (ShiftRight (B1B2(\_SB.PCI0.LPCB.EC0.SAE0,\_SB.PCI0.LPCB.EC0.SAE1), 0x08), Index (DerefOf (Index (Local0, 0x02)), 0x69
                             ))
                         Store (\_SB.PCI0.LPCB.EC0.BSMN, Local1)
                         CreateField (DerefOf (Index (Local0, 0x02)), 0x0160, 0x90, BMAN)
@@ -63334,7 +63334,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
                         CreateField (DerefOf (Index (Local0, 0x02)), 0x02B0, 0x20, BCHE)
                         Store (ECHE, BCHE) /* \GBAT.BCHE */
                         Store (Zero, Local1)
-                        Store (\_SB.PCI0.LPCB.EC0.BSCN, Local1)
+                        Store (\_SB.PCI0.LPCB.H_EC.RECB (0xE0,128), Local1)
                         CreateField (DerefOf (Index (Local0, 0x02)), 0x01F0, 0x80, BCTN)
                         Store (Local1, BCTN) /* \GBAT.BCTN */
                     }
@@ -65718,5 +65718,15 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
     Method (WAK, 1, NotSerialized)
     {
     }
+    Method (B1B4, 4, NotSerialized)
+    {
+        Store(Arg3, Local0)
+        Or(Arg2, ShiftLeft(Local0, 8), Local0)
+        Or(Arg1, ShiftLeft(Local0, 8), Local0)
+        Or(Arg0, ShiftLeft(Local0, 8), Local0)
+        Return(Local0)
+    }
+    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
+    External(B1B2, MethodObj)
 }
 
