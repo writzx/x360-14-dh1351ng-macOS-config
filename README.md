@@ -2,4 +2,4 @@
 
 macOS Catalina Configuration for HP Pavilion x360 14-dh1351ng
 
-Please note that this is WIP at the moment. Nothing is working.
+Almost in the final stages now. Almost everything works. :)
