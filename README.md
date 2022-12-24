@@ -1,15 +1,14 @@
 # **HP Pavilion 14 x360 config** (dh1351ng)
 > **NOTE: ATM only updated the checklist with correct config information for Monterey/Ventura on OpenCore 0.8.7. The config file and the patches in the repo are still outdated.**
 ## **Checklist**
-----
 ### CPU and Power Management
  - [x] Power Management
-	> CPUFriend.kext + CPUFriendDataProvider.kext (generate from CPUFriendFriend; min hex freq: 08, EPP: 7F)
+	> [Optional] CPUFriend.kext + CPUFriendDataProvider.kext (generate from CPUFriendFriend; min hex freq: 08, EPP: 7F)
  - [ ] Sleep + Wake + Shutdown + Restart >> **BUG: Instant Wake after sleep**
  - [ ] Sleep - manual, auto, lid, external display >> **WIP?**
  - [ ] Hibernate mode >> **WIP?**
 ### Graphics
- - QE/CI >> **BUG: Losing display at startup sometimes**
+ - [x] QE/CI >> **BUG: Losing display at startup sometimes**
 	> WhateverGreen.kext
 	> 
 	>		<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
@@ -30,9 +29,9 @@
 
  - [ ] HDMI Port >> **WIP: still needs framebuffer patch, probably: framebuffer-con1-busid=01000000**
  - [x] VDA Decoder >> ***WORKS: Graphics Fixes***
- - [ ] DRM Support >> **probably not supported in mobile IGPU-only config**
+ - [ ] ~DRM Support~ >> **probably not supported in mobile IGPU-only config**
  - [x] Metal >> **WORKS: Graphics Fixes**
- - [ ] Intel QSync >> **WIP?: probably already works**
+ - [ ] Intel QuickSync >> **WIP?: probably already works**
  - [x] Boot Glitch >> ***NONE - Graphics Patches***
 ### IO Devices
  - [x] USB ports >> **DONE**
