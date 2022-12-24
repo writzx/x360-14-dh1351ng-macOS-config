@@ -85,7 +85,7 @@
    > SSDT-PNLF (with **CometLake** uid)
  - [ ] Brightness keys >> **WIP?**
  - [ ] Fn Media keys >> **WIP?**
- - [ ] Brightness sensor (auto brightness controls) >> **WIP**
+ - [ ] ~Brightness sensor (auto brightness controls)~ >> **sensor not present**
  - [ ] iMessage/FaceTime >> **WIP: probably already works**
  - [x] SIP >> ***WORKS***
  - [ ] FileVault >> **WIP?**
