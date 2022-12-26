@@ -9,7 +9,8 @@
  - [ ] Hibernate mode >> **WIP?**
 ### Graphics
  - [x] QE/CI >> **BUG: Losing display at startup sometimes**
-	> WhateverGreen.kext
+	> WhateverGreen.kext  
+	> In `DeviceProperties -> Add` :
 	> 
 	>		<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 	>		<dict>
@@ -38,7 +39,8 @@
 	> USBToolBox.kext + UTBMap.kext (*from tool*)  
 	> SSDT-EC-USBX (for PM)
  - [x] WiFi >> **DONE: Replaced with Broadcom BCM4352, the Intel card probably works with [itlwm](https://github.com/OpenIntelWireless/itlwm), however untested.**
-	> AirportBrcmFixup.kext (**BUT Disable All Injectors in OC Config**) [^2]
+	> AirportBrcmFixup.kext (**BUT Disable All Injectors in OC Config**) [^2]  
+	> In `DeviceProperties -> Add` :
 	> 
 	>		<key>PciRoot(0x0)/Pci(0x1d,0x1)/Pci(0x0,0x0)</key>
 	>		<dict>
@@ -64,6 +66,7 @@
 	> VoodooI2C.kext + VoodooRMI.kext  
 	> SSDT-XOSI + _OSI rename patch  
 	> GPIO pin patch (GPDI replace): >> **DO NOT APPLY if using the _`GPLI replace`_ patch from touchscreen fixes below** [^3]  
+	> In `ACPI -> Patch` :
 	>
 	>		<array>
 	>			<dict>
@@ -101,6 +104,7 @@
  - [x] Touchscreen
 	> VoodooI2C.kext + VoodooI2CHID.kext  
 	> GPIO pin patch (GPLI replace): >> **DO NOT APPLY if using the _`GPDI replace`_ patch from trackpad fixes above** [^3]  
+	> In `ACPI -> Patch` :
 	>
 	>		<array>
 	>			<dict>
