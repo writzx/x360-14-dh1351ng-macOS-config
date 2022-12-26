@@ -63,8 +63,7 @@
  - [x] Trackpad
 	> VoodooI2C.kext + VoodooRMI.kext  
 	> SSDT-XOSI + _OSI rename patch  
-	> GPIO pin patch (GPDI replace) >> **DO NOT APPLY if using the _`GPLI replace`_ patch from touchscreen fixes below**
-	> **Try both patches out and test which one works better for you. In my system the _`GPDI replace`_ hotpatch works better**
+	> GPIO pin patch (GPDI replace): >> **DO NOT APPLY if using the _`GPLI replace`_ patch from touchscreen fixes below** [^1]  
 	>
 	>		<array>
 	>			<dict>
@@ -100,9 +99,8 @@
 	>		</array>
 
  - [x] Touchscreen
-	> VoodooI2C.kext + VoodooI2CHID.kext
-	> GPIO pin patch (GPLI replace) >> **DO NOT APPLY if using the _`GPDI replace`_ patch from trackpad fixes above**
-	> **Try both patches out and test which one works better for you. In my system the _`GPDI replace`_ hotpatch works better**
+	> VoodooI2C.kext + VoodooI2CHID.kext  
+	> GPIO pin patch (GPLI replace): >> **DO NOT APPLY if using the _`GPDI replace`_ patch from trackpad fixes above** [^1]  
 	>
 	>		<array>
 	>			<dict>
@@ -164,3 +162,6 @@
  - [ ] AirDrop >> **WIP?**
  - [ ] AirPlay >> **WIP?**
  - [ ] Sidecar >> **WIP?**
+
+
+[^1]: Only one of these hotpatches is required (either _`GPDI replace`_ or _`GPLI replace`_). The idea is to move one of the devices into a different community (more info in [VoodooI2C GPIO Pinning Guide](https://github.com/VoodooI2C/VoodooI2C/blob/master/Documentation/GPIO%20Pinning.md#step-2d-manually-pinning-your-device), they are in the same community by default) so that VoodooI2C properly works with both. The _`GPDI replace`_ patch moves the Trackpad GPIO pin and the _`GPLI replace`_ patch moves the Touchscreen GPIO pin. Try both patches out and test which one works better for you. In my system the _`GPDI replace`_ hotpatch works better as I have noticed some instabilities with moving the Touchscreen GPIO pin (stops working after some time, selection/drag/clicks not working , etc.)
