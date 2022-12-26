@@ -59,11 +59,46 @@
 	> BlueToolFixup.kext + BrcmFirmwareData.kext + BrcmPatchRAM3.kext
  - [x] Webcam >> ***WORKS - USB Fixes***
  - [x] Keyboard >> **DONE**
-   > VoodooPS2Controller.kext
- - [ ] Trackpad >> **BUG: Trackpad and Touchscreen dont work at the same time**
-   > VoodooI2C.kext + VoodooRMI.kext  
-   > SSDT-XOSI + _OSI rename patch
- - [ ] Touchscreen >> **BUG: Trackpad and Touchscreen dont work at the same time**
+	> VoodooPS2Controller.kext
+ - [x] Trackpad
+	> VoodooI2C.kext + VoodooRMI.kext  
+	> SSDT-XOSI + _OSI rename patch  
+	> GPIO pin patch (patches touchscreen pin)
+	>
+	>		<array>
+	>			<dict>
+	>				<key>Base</key>
+	>				<string></string>
+	>				<key>BaseSkip</key>
+	>				<integer>0</integer>
+	>				<key>Comment</key>
+	>				<string>Replace GPLI=0x04040007 with GPLI=0x04070007</string>
+	>				<key>Count</key>
+	>				<integer>0</integer>
+	>				<key>Enabled</key>
+	>				<true/>
+	>				<key>Find</key>
+	>				<data>cAwHAAQER1BMSQ==</data>
+	>				<key>Limit</key>
+	>				<integer>0</integer>
+	>				<key>Mask</key>
+	>				<data></data>
+	>				<key>OemTableId</key>
+	>				<data>AAAAAA==</data>
+	>				<key>Replace</key>
+	>				<data>cAwHAAcER1BMSQ==</data>
+	>				<key>ReplaceMask</key>
+	>				<data></data>
+	>				<key>Skip</key>
+	>				<integer>0</integer>
+	>				<key>TableLength</key>
+	>				<integer>0</integer>
+	>				<key>TableSignature</key>
+	>				<data>AAAAAA==</data>
+	>			</dict>
+	>		</array>
+
+ - [ ] Touchscreen >> **BUG: works initially then gets disabled until sleep**
    > VoodooI2C.kext + VoodooI2CHID.kext
  - [x] NVMe devices >> ***WORKS - USB fixes, WiFi fixes, kext conflict fixes, etc.***
  - [x] NVMe TRIM support >> **WORKS - Out of the box with NVMe**
