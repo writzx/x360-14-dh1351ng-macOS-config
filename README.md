@@ -65,79 +65,145 @@
  - [x] Trackpad
 	> VoodooI2C.kext + VoodooRMI.kext  
 	> SSDT-XOSI + _OSI rename patch  
-	> GPIO pin patch (GPDI replace): >> **DO NOT APPLY if using the _`GPLI replace`_ patch from touchscreen fixes below** [^3]  
+	> GPIO pin patch (`GPDI` replace from `0x04040003` to `0x04070003`): >> **DO NOT APPLY if using the _`GPLI replace`_ patch from touchscreen fixes below** [^3]  
+	> - **Option 1:** Rename TPD0._INI to TPD0.XINI and set GPDI in SSDT-TPD0. Recommended if dual-booting Windows (or even linux). The `SSDT-TPD0` should set the correct value to GPDI based on an `_OSI` call, only different for `Darwin`.  
 	> In `ACPI -> Patch` :
 	>
-	>		<array>
-	>			<dict>
-	>				<key>Base</key>
-	>				<string></string>
-	>				<key>BaseSkip</key>
-	>				<integer>0</integer>
-	>				<key>Comment</key>
-	>				<string>Replace GPDI=0x04040003 with GPDI=0x04070003</string>
-	>				<key>Count</key>
-	>				<integer>0</integer>
-	>				<key>Enabled</key>
-	>				<true/>
-	>				<key>Find</key>
-	>				<data>cAwDAAQER1BESQ==</data>
-	>				<key>Limit</key>
-	>				<integer>0</integer>
-	>				<key>Mask</key>
-	>				<data></data>
-	>				<key>OemTableId</key>
-	>				<data>AAAAAA==</data>
-	>				<key>Replace</key>
-	>				<data>cAwDAAcER1BESQ==</data>
-	>				<key>ReplaceMask</key>
-	>				<data></data>
-	>				<key>Skip</key>
-	>				<integer>0</integer>
-	>				<key>TableLength</key>
-	>				<integer>0</integer>
-	>				<key>TableSignature</key>
-	>				<data>AAAAAA==</data>
-	>			</dict>
-	>		</array>
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.I2C0</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Rename TPD0._INI to TPD0.XINI and remove GPDI=0x04040003 call</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>X0lOSQBwDAMABARHUERJ</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>WElOSQCjo6Ojo6Ojo6Oj</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data>AAAAAA==</data>
+	>		</dict>
+	> - **Option 2:** Replace GPDI directly using hotpatch. Simpler use case only if not dual-booting.  
+	> In `ACPI -> Patch` :
+	>
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.I2C0</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Replace GPDI=0x04040003 with GPDI=0x04070003</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>cAwDAAQER1BESQ==</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>cAwDAAcER1BESQ==</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data>AAAAAA==</data>
+	>		</dict>
 
  - [x] Touchscreen
 	> VoodooI2C.kext + VoodooI2CHID.kext  
-	> GPIO pin patch (GPLI replace): >> **DO NOT APPLY if using the _`GPDI replace`_ patch from trackpad fixes above** [^3]  
+	> GPIO pin patch (GPLI replace from `0x04040007` to `0x04070007`): >> **DO NOT APPLY if using the _`GPDI replace`_ patch from trackpad fixes above** [^3]  
+	> - **Option 1:** Rename TPL1._INI to TPL1.XINI and set GPLI in SSDT-TPL1. Recommended if dual-booting Windows (or even linux). The `SSDT-TPL1` should set the correct value to GPLI based on an `_OSI` call, only different for `Darwin`.  
 	> In `ACPI -> Patch` :
 	>
-	>		<array>
-	>			<dict>
-	>				<key>Base</key>
-	>				<string></string>
-	>				<key>BaseSkip</key>
-	>				<integer>0</integer>
-	>				<key>Comment</key>
-	>				<string>Replace GPLI=0x04040007 with GPLI=0x04070007</string>
-	>				<key>Count</key>
-	>				<integer>0</integer>
-	>				<key>Enabled</key>
-	>				<true/>
-	>				<key>Find</key>
-	>				<data>cAwHAAQER1BMSQ==</data>
-	>				<key>Limit</key>
-	>				<integer>0</integer>
-	>				<key>Mask</key>
-	>				<data></data>
-	>				<key>OemTableId</key>
-	>				<data>AAAAAA==</data>
-	>				<key>Replace</key>
-	>				<data>cAwHAAcER1BMSQ==</data>
-	>				<key>ReplaceMask</key>
-	>				<data></data>
-	>				<key>Skip</key>
-	>				<integer>0</integer>
-	>				<key>TableLength</key>
-	>				<integer>0</integer>
-	>				<key>TableSignature</key>
-	>				<data>AAAAAA==</data>
-	>			</dict>
-	>		</array> 
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.I2C1</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Rename TPL1._INI to TPL1.XINI and remove GPLI=0x04040007 call</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>X0lOSQBwDAcABARHUExJ</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>WElOSQCjo6Ojo6Ojo6Oj</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data>AAAAAA==</data>
+	>		</dict>
+	>		
+	> - **Option 2:** Replace GPLI directly using hotpatch. Simpler use case only if not dual-booting.  
+	> In `ACPI -> Patch` :
+	>
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.I2C1</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Replace GPLI=0x04040007 with GPLI=0x04070007</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>cAwHAAQER1BMSQ==</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>cAwHAAcER1BMSQ==</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data>AAAAAA==</data>
+	>		</dict>
+
  - [x] NVMe devices >> ***WORKS - USB fixes, WiFi fixes, kext conflict fixes, etc.*** [^4]
  - [x] NVMe TRIM support >> **WORKS - Out of the box with NVMe**
  - [ ] Card Reader >> **WIP: probably will not work**
@@ -157,7 +223,7 @@
    > Graphics fixes  
    > SSDT-PNLF (with **CometLake** uid)
  - [ ] Brightness keys >> **WIP?**
- - [ ] Fn Media keys >> **WIP?**
+ - [x] Fn Media keys >> ***WORKS***
  - [ ] ~Brightness sensor (auto brightness controls)~ >> **sensor not present**
  - [ ] iMessage/FaceTime >> **WIP: probably already works**
  - [x] SIP >> ***WORKS***
