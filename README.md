@@ -216,13 +216,79 @@
  - [ ] Audio over HDMI >> **WIP**
 ### Misc
  - [x] Battery status >> **DONE**
-   > VirtualSMC.kext + SMCBatteryManager.kext  
-   > ECEnabler.kext  
-   > SSDT-EC-USBX (for fake EC device)
+	> VirtualSMC.kext + SMCBatteryManager.kext  
+	> ECEnabler.kext  
+	> SSDT-EC-USBX (for fake EC device)
  - [x] Brightness control >> **DONE**
-   > Graphics fixes  
-   > SSDT-PNLF (with **CometLake** uid)
- - [ ] Brightness keys >> **WIP?**
+	> Graphics fixes  
+	> SSDT-PNLF (with **CometLake** uid)
+ - [x] Brightness keys >> **DONE**
+	> SSDT-EC-QXX (Keyboard device: `\_SB.PCI0.LPCB.EC0.KBD0`)  
+	> Standard _QXX rename patches (*Brightness Up*: `_Q1C` -> `XQ1C` and *Brightness Down*: `_Q1D` -> `XQ1D`)  
+	> In `ACPI -> Patch` :
+	> 
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.LPCB</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Replace _Q1D with XQ1D</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>X1ExRA==</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>WFExRA==</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data></data>
+	>		</dict>
+	>		<dict>
+	>			<key>Base</key>
+	>			<string>\_SB.PCI0.LPCB</string>
+	>			<key>BaseSkip</key>
+	>			<integer>0</integer>
+	>			<key>Comment</key>
+	>			<string>Replace _Q1C with XQ1C</string>
+	>			<key>Count</key>
+	>			<integer>0</integer>
+	>			<key>Enabled</key>
+	>			<true/>
+	>			<key>Find</key>
+	>			<data>X1ExQw==</data>
+	>			<key>Limit</key>
+	>			<integer>0</integer>
+	>			<key>Mask</key>
+	>			<data></data>
+	>			<key>OemTableId</key>
+	>			<data></data>
+	>			<key>Replace</key>
+	>			<data>WFExQw==</data>
+	>			<key>ReplaceMask</key>
+	>			<data></data>
+	>			<key>Skip</key>
+	>			<integer>0</integer>
+	>			<key>TableLength</key>
+	>			<integer>0</integer>
+	>			<key>TableSignature</key>
+	>			<data></data>
+	>		</dict>
+
+
  - [x] Fn Media keys >> ***WORKS***
  - [ ] ~Brightness sensor (auto brightness controls)~ >> **sensor not present**
  - [ ] iMessage/FaceTime >> **WIP: probably already works**
