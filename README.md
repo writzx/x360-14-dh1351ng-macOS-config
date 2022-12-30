@@ -294,8 +294,8 @@
  - [ ] iMessage/FaceTime >> **WIP: probably already works**
  - [x] SIP >> ***WORKS***
  - [ ] FileVault >> **WIP?**
- - [ ] HandOff + Continuity >> **WIP: probably already works**
- - [ ] AirDrop >> **WIP?**
+ - [x] HandOff + Continuity >> ***WORKS: WiFi fixes***
+ - [x] AirDrop >> ***WORKS: WiFi fixes***
  - [ ] AirPlay >> **WIP?**
  - [ ] Sidecar >> **WIP?**
 
