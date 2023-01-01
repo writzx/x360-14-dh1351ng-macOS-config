@@ -291,7 +291,7 @@
 
  - [x] Fn Media keys >> ***WORKS***
  - [ ] ~Brightness sensor (auto brightness controls)~ >> **sensor not present**
- - [ ] iMessage/FaceTime >> **WIP: probably already works**
+ - [x] iMessage/FaceTime >> ***WORKS: valid SMBIOS configuration + WiFi fixes***
  - [x] SIP >> ***WORKS***
  - [ ] FileVault >> **WIP?**
  - [x] HandOff + Continuity >> ***WORKS: WiFi fixes***
