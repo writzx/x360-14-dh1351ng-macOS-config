@@ -205,7 +205,7 @@
 	>		</dict>
 	>			
 	> - **Option 3:** Disable touchscreen completlely. Even simpler option because macOS doesn't properly support touchscreen anyway.
-	> SSDT-TPL1-DISABLE (Return Zero for "Darwin" from _STA)
+	> SSDT-TPL1-DISABLE (Return Zero for "Darwin" from _STA)  
 	> In `ACPI -> Patch` :
 	>
 	> 		<dict>
